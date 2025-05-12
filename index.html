@@ -21,20 +21,20 @@
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: transparent;
+            background-color: transparent !important;
         }
         .calendar-container {
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            background: transparent;
+            background: transparent !important;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #4B5563 0%, #374151 100%);
+            background: linear-gradient(135deg, #333 0%, #666 100%);
         }
         .gradient-hover {
             transition: all 0.3s ease;
         }
         .gradient-hover:hover {
-            background: linear-gradient(135deg, #374151 0%, #1F2937 100%);
+            background: linear-gradient(135deg, #444 0%, #777 100%);
             transform: translateY(-2px);
         }
         input[type="date"], select {
@@ -59,9 +59,9 @@
             to { opacity: 0; transform: translateY(10px); }
         }
         .card {
-            background-color: rgba(249, 250, 251, 0.5);
+            background-color: rgba(245, 245, 245, 0.85);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(229, 231, 235, 0.5);
+            border: 1px solid rgba(200, 200, 200, 0.3);
         }
         /* カスタムラジオボタン */
         input[type="radio"] {
@@ -69,18 +69,18 @@
             -webkit-appearance: none;
             width: 16px;
             height: 16px;
-            border: 2px solid #9CA3AF;
+            border: 2px solid #666;
             border-radius: 50%;
             outline: none;
             transition: all 0.2s ease;
         }
         input[type="radio"]:checked {
-            border-color: #4B5563;
-            background-color: #4B5563;
+            border-color: #666;
+            background-color: #666;
             box-shadow: inset 0 0 0 3px white;
         }
         input[type="radio"]:focus {
-            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.2), inset 0 0 0 3px white;
+            box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.2), inset 0 0 0 3px white;
         }
         /* カスタムチェックボックス */
         input[type="checkbox"] {
@@ -88,15 +88,15 @@
             -webkit-appearance: none;
             width: 16px;
             height: 16px;
-            border: 2px solid #9CA3AF;
+            border: 2px solid #666;
             border-radius: 4px;
             outline: none;
             transition: all 0.2s ease;
             position: relative;
         }
         input[type="checkbox"]:checked {
-            border-color: #4B5563;
-            background-color: #4B5563;
+            border-color: #666;
+            background-color: #666;
         }
         input[type="checkbox"]:checked::after {
             content: '';
@@ -110,7 +110,7 @@
             transform: rotate(45deg);
         }
         input[type="checkbox"]:focus {
-            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.2);
+            box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.2);
         }
         /* 新しいボタンアニメーション */
         .btn-animation {
@@ -159,7 +159,7 @@
         /* 追加ボタンのアニメーション */
         @keyframes addSuccess {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(75, 85, 99, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(100, 100, 100, 0.6); }
             100% { transform: scale(1); }
         }
         .add-success {
@@ -234,7 +234,7 @@
             pointer-events: none;
             width: 20px;
             height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234B5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'%3E%3C/path%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'%3E%3C/path%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -252,7 +252,7 @@
         /* 日付リストのスクロールバーをカスタマイズ */
         #date-list {
             scrollbar-width: thin;
-            scrollbar-color: #CBD5E0 #F9FAFB;
+            scrollbar-color: #999 #f5f5f5;
             overflow-x: hidden; /* 横スクロールを無効化 */
             max-width: 100%; /* 幅を制限 */
             word-break: break-word; /* 長いテキストを折り返す */
@@ -264,14 +264,14 @@
         }
         
         #date-list::-webkit-scrollbar-track {
-            background: #F9FAFB;
+            background: #f5f5f5;
             border-radius: 10px;
         }
         
         #date-list::-webkit-scrollbar-thumb {
-            background-color: #CBD5E0;
+            background-color: #999;
             border-radius: 10px;
-            border: 2px solid #F9FAFB;
+            border: 2px solid #f5f5f5;
         }
         
         /* 日付アイテムのスタイル調整 */
@@ -280,10 +280,15 @@
             box-sizing: border-box;
             white-space: normal; /* テキストを折り返す */
         }
+        
+        /* 背景を完全に透過に */
+        html, body {
+            background: transparent !important;
+        }
     </style>
 </head>
-<body style="background: transparent;">
-    <div class="min-h-screen flex items-center justify-center p-4" style="background: transparent;">
+<body>
+    <div class="min-h-screen flex items-center justify-center p-4">
         <div class="calendar-container rounded-xl p-6 w-full max-w-4xl">
             <div class="flex flex-col md:flex-row gap-6">
                 <!-- 左側：入力エリア -->
@@ -307,7 +312,7 @@
                                     <input 
                                         type="date" 
                                         id="date-picker" 
-                                        class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-800"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-700"
                                     >
                                 </div>
                             </div>
@@ -318,7 +323,7 @@
                                     <label for="start-time" class="block text-sm font-medium text-gray-700 mb-1">開始時刻</label>
                                     <select 
                                         id="start-time" 
-                                        class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-800"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-700"
                                     >
                                         <!-- 時間オプションはJSで生成 -->
                                     </select>
@@ -327,7 +332,7 @@
                                     <label for="end-time" class="block text-sm font-medium text-gray-700 mb-1">終了時刻</label>
                                     <select 
                                         id="end-time" 
-                                        class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-800"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white text-gray-700"
                                     >
                                         <!-- 時間オプションはJSで生成 -->
                                     </select>
@@ -341,27 +346,6 @@
                             >
                                 ＋ 日時を追加
                             </button>
-                        </div>
-                    </div>
-                    
-                    <!-- フォーマット選択 -->
-                    <div class="card p-4 rounded-xl shadow-sm">
-                        <div class="flex flex-wrap gap-4">
-                            <label class="inline-flex items-center">
-                                <input type="radio" name="format" value="standard" class="form-radio" checked>
-                                <span class="ml-2 text-gray-700">ノーマル</span>
-                                <span class="ml-1 text-xs text-gray-500">(5月1日(月) 13:30〜15:00)</span>
-                            </label>
-                            <label class="inline-flex items-center">
-                                <input type="radio" name="format" value="long" class="form-radio">
-                                <span class="ml-2 text-gray-700">くわしく</span>
-                                <span class="ml-1 text-xs text-gray-500">(5月1日(月曜日) 13時30分〜15時00分)</span>
-                            </label>
-                            <label class="inline-flex items-center">
-                                <input type="radio" name="format" value="short" class="form-radio">
-                                <span class="ml-2 text-gray-700">シンプル</span>
-                                <span class="ml-1 text-xs text-gray-500">(5/1 13:30〜15:00)</span>
-                            </label>
                         </div>
                     </div>
                 </div>
@@ -394,7 +378,7 @@
                         </div>
                         <textarea 
                             id="result" 
-                            class="result-text w-full h-40 p-3 text-gray-800 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 resize-none bg-white bg-opacity-90"
+                            class="result-text w-full h-40 p-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 resize-none bg-white bg-opacity-90"
                             readonly
                         >選択された日時がここに表示されます</textarea>
                     </div>
@@ -494,12 +478,6 @@
             
             // コピーボタンのクリックイベント
             document.getElementById('copy-btn').addEventListener('click', copyResult);
-            
-            // ラジオボタンが変更されたときに表示を更新
-            const radioButtons = document.querySelectorAll('input[name="format"]');
-            radioButtons.forEach(radio => {
-                radio.addEventListener('change', updateResult);
-            });
             
             function addDateTime() {
                 const datePicker = document.getElementById('date-picker');
@@ -602,28 +580,21 @@
                 }, 600);
             }
             
-            function formatDateTime(dateTimeCombo, formatType) {
+            function formatDateTime(dateTimeCombo) {
                 if (dateTimeCombo.noTime) {
                     // 時刻なしの場合
                     const date = dateTimeCombo.date;
                     
                     // 日本語の曜日
                     const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
-                    const weekdayLong = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
                     
                     // 月と日を取得
                     const month = date.getMonth() + 1;
                     const day = date.getDate();
                     const weekday = date.getDay();
                     
-                    switch (formatType) {
-                        case 'long':
-                            return `${month}月${day}日（${weekdayLong[weekday]}）`;
-                        case 'short':
-                            return `${month}/${day}`;
-                        default: // standard
-                            return `${month}月${day}日（${weekdays[weekday]}）`;
-                    }
+                    // ノーマル表示
+                    return `${month}月${day}日（${weekdays[weekday]}）`;
                 } else {
                     // 時刻ありの場合
                     const startDate = dateTimeCombo.start;
@@ -631,7 +602,6 @@
                     
                     // 日本語の曜日
                     const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
-                    const weekdayLong = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
                     
                     // 月と日を取得
                     const startMonth = startDate.getMonth() + 1;
@@ -657,24 +627,12 @@
                         const endDay = endDate.getDate();
                         const endWeekday = endDate.getDay();
                         
-                        switch (formatType) {
-                            case 'long':
-                                return `${startMonth}月${startDay}日（${weekdayLong[startWeekday]}） ${startHours}時${startMinutes}分〜${endMonth}月${endDay}日（${weekdayLong[endWeekday]}） ${endHours}時${endMinutes}分`;
-                            case 'short':
-                                return `${startMonth}/${startDay} ${startHours}:${startMinutes}〜${endMonth}/${endDay} ${endHours}:${endMinutes}`;
-                            default: // standard
-                                return `${startMonth}月${startDay}日（${weekdays[startWeekday]}） ${startHours}:${startMinutes}〜${endMonth}月${endDay}日（${weekdays[endWeekday]}） ${endHours}:${endMinutes}`;
-                        }
+                        // ノーマル表示
+                        return `${startMonth}月${startDay}日（${weekdays[startWeekday]}） ${startHours}:${startMinutes}〜${endMonth}月${endDay}日（${weekdays[endWeekday]}） ${endHours}:${endMinutes}`;
                     } else {
                         // 同じ日の場合
-                        switch (formatType) {
-                            case 'long':
-                                return `${startMonth}月${startDay}日（${weekdayLong[startWeekday]}） ${startHours}時${startMinutes}分〜${endHours}時${endMinutes}分`;
-                            case 'short':
-                                return `${startMonth}/${startDay} ${startHours}:${startMinutes}〜${endHours}:${endMinutes}`;
-                            default: // standard
-                                return `${startMonth}月${startDay}日（${weekdays[startWeekday]}） ${startHours}:${startMinutes}〜${endHours}:${endMinutes}`;
-                        }
+                        // ノーマル表示
+                        return `${startMonth}月${startDay}日（${weekdays[startWeekday]}） ${startHours}:${startMinutes}〜${endHours}:${endMinutes}`;
                     }
                 }
             }
@@ -691,16 +649,14 @@
                     return;
                 }
                 
-                const formatType = document.querySelector('input[name="format"]:checked').value;
-                
                 selectedDates.forEach((dateTimeCombo, index) => {
                     const dateItem = document.createElement('div');
-                    dateItem.className = 'date-item flex justify-between items-center p-2 bg-white bg-opacity-70 rounded-lg border border-gray-200';
+                    dateItem.className = 'date-item flex justify-between items-center p-2 bg-white bg-opacity-70 rounded-lg border border-gray-300';
                     dateItem.dataset.index = index;
                     
                     const dateText = document.createElement('span');
-                    dateText.className = 'text-sm';
-                    dateText.textContent = formatDateTime(dateTimeCombo, formatType);
+                    dateText.className = 'text-sm text-gray-700';
+                    dateText.textContent = formatDateTime(dateTimeCombo);
                     
                     const removeBtn = document.createElement('button');
                     removeBtn.className = 'text-gray-500 hover:text-gray-700 focus:outline-none flex-shrink-0 ml-2';
@@ -737,7 +693,6 @@
             
             function updateResult() {
                 const result = document.getElementById('result');
-                const formatType = document.querySelector('input[name="format"]:checked').value;
                 
                 if (selectedDates.length === 0) {
                     result.value = '選択された日時がここに表示されます';
@@ -746,7 +701,7 @@
                 
                 // 選択された日時を整形して結合
                 const formattedDates = selectedDates.map(dateTimeCombo => 
-                    formatDateTime(dateTimeCombo, formatType)
+                    formatDateTime(dateTimeCombo)
                 );
                 
                 result.value = formattedDates.join('\n');
@@ -793,7 +748,7 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e27c22468a3c1a',t:'MTc0Njk3NDk4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e6083f20e1f665',t:'MTc0NzAxMjE4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 <!-- partial -->
   
