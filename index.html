@@ -24,8 +24,8 @@
             background-color: transparent !important;
         }
         .calendar-container {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             background: transparent !important;
+            /* シャドウを削除 */
         }
         .gradient-bg {
             background: linear-gradient(135deg, #333 0%, #666 100%);
@@ -293,7 +293,7 @@
             <div class="flex flex-col md:flex-row gap-6">
                 <!-- 左側：入力エリア -->
                 <div class="w-full md:w-1/2 space-y-4">
-                    <div class="card p-5 rounded-xl shadow-sm">
+                    <div class="card p-5 rounded-xl">
                         <div class="grid grid-cols-1 gap-4">
                             <!-- 日付選択と時刻なしオプション -->
                             <div>
@@ -342,7 +342,7 @@
                             <!-- 追加ボタン -->
                             <button 
                                 id="add-btn"
-                                class="w-full gradient-bg gradient-hover text-white font-medium py-2.5 px-4 rounded-lg transition duration-300 ease-in-out shadow-md btn-animation sparkle"
+                                class="w-full gradient-bg gradient-hover text-white font-medium py-2.5 px-4 rounded-lg transition duration-300 ease-in-out btn-animation sparkle"
                             >
                                 ＋ 日時を追加
                             </button>
@@ -353,7 +353,7 @@
                 <!-- 右側：結果エリア -->
                 <div class="w-full md:w-1/2 space-y-4">
                     <!-- 選択された日時のリスト -->
-                    <div class="card p-4 rounded-xl shadow-sm">
+                    <div class="card p-4 rounded-xl">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="text-base font-medium text-gray-700">選択された日時</h2>
                         </div>
@@ -363,7 +363,7 @@
                     </div>
                     
                     <!-- 結果表示エリア -->
-                    <div class="card p-4 rounded-xl shadow-sm">
+                    <div class="card p-4 rounded-xl">
                         <div class="flex justify-between items-center mb-2">
                             <h2 class="text-base font-medium text-gray-700">テキスト出力</h2>
                             <button 
@@ -748,7 +748,7 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e6083f20e1f665',t:'MTc0NzAxMjE4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e61d2f12beafc1',t:'MTc0NzAxMzA0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 <!-- partial -->
   
